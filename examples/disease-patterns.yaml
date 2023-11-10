@@ -1,0 +1,29 @@
+id: https://example.org/disease-pattern/schema/
+name: disease-patterns
+description: Example schema for the complex uri system using diseases.
+imports:
+- linkml:types
+prefixes:
+  linkml: https://w3id.org/linkml/
+  rdfs: http://www.w3.org/2000/01/rdf-schema#
+  rdf: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+default_curi_maps:
+- semweb_context
+- obo_context
+default_prefix: disease-patterns
+default_range: string
+
+slots:
+  disease:
+    description: A disease or disorder.
+    range: uriorcurie
+  severity_modifier:
+    description: A modifier to an existing disposition, disease, phenotypic feature or disorder..
+    range: uriorcurie
+
+classes:
+  disease0001:
+    description: Represents the severity-modified form of a disease, such as "severe diabetes mellitus type 1".
+    slots:
+    - disease
+    - severity_modifier
